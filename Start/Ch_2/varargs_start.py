@@ -3,11 +3,16 @@
 
 
 # TODO: define a function that takes variable arguments
-def addition():
-    pass
+def addition(*args):
+    result = 0
+    for arg in args:
+        result += arg
+    return result
 
 
 # TODO: pass different arguments
-print(addition())
+print(addition(10, 30, 10))
 
 # TODO: pass an existing list
+my_nums = [5, 10, 15, 20]
+print(addition(*my_nums))

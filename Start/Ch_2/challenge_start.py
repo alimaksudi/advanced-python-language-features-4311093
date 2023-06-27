@@ -13,9 +13,20 @@
 
 
 def string_combiner(*args, unique=False):
+    """
+    This function accepts a variable number of strings and numbers and combines them into a single string.
+    If the unique-only argument is True, then the result combined string will not contain any duplicate characters.
+    """
     result = ""
 
-    # YOUR CODE HERE
+    # combine all the arguments into a single string
+    for arg in args:
+        if isinstance(arg, (str, int, float)):
+            result += str(arg)
+
+    # remove duplicates if unique is True
+    if unique:
+        result = "".join(set(result))
 
     return result
 
